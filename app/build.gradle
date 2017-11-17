@@ -1,33 +1,44 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 26
-    defaultConfig {
-        applicationId "com.flickrdemo"
-        minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  compileSdkVersion 26
+  defaultConfig {
+    applicationId "com.flickrdemo"
+    minSdkVersion 15
+    targetSdkVersion 26
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+      buildConfigField 'String', 'BASE_URL', '\"https://api.flickr.com/services/rest/\"'
+      buildConfigField 'String', 'FLICKR_API_KEY', '\"3e7cc266ae2b0e0d78e279ce8e361736\"'
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+
+    // Should use different keys for dev and prod builds
+    debug {
+      buildConfigField 'String', 'BASE_URL', '\"https://api.flickr.com/services/rest/\"'
+      buildConfigField 'String', 'FLICKR_API_KEY', '\"3e7cc266ae2b0e0d78e279ce8e361736\"'
     }
+  }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+  implementation 'com.android.support:appcompat-v7:26.1.0'
+  implementation 'com.android.support:recyclerview-v7:26.1.0'
+
+  testImplementation 'junit:junit:4.12'
+  testImplementation 'org.json:json:20140107'
+  testImplementation 'com.nhaarman:mockito-kotlin-kt1.1:1.5.0'
+
+  androidTestImplementation 'com.android.support.test:runner:1.0.1'
+  androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }

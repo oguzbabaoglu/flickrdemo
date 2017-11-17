@@ -1,0 +1,22 @@
+{
+  "photos": {
+    "page": 1,
+    "pages": 1682,
+    "perpage": 100,
+    "total": "168106",
+    "photo": [
+      {
+        "id": "26704142019",
+        "owner": "110174665@N07",
+        "secret": "4155b4e76b",
+        "server": "4574",
+        "farm": 5,
+        "title": "DSC_8819",
+        "ispublic": 1,
+        "isfriend": 0,
+        "isfamily": 0
+      }
+    ]
+  },
+  stat: "ok"
+}

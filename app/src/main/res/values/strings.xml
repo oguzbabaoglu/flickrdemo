@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FlickrDemo</string>
+    <string name="search_hint">Type a search term and submit to load images</string>
+    <string name="generic_error">Something went wrong.</string>
 </resources>
