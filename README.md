@@ -2,6 +2,7 @@
 - Written in Kotlin
 - No 3rd party dependencies used other than Mockito in unit tests
 - App should be ready to build and run after cloning from repo
+- Built apk: https://github.com/oguzbabaoglu/flickrdemo/releases/download/1.0/app-debug.apk
 
 ## Tests
 Run unit tests:
