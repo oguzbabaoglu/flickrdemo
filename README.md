@@ -1,6 +1,6 @@
 # Flickr Demo App
 - Written in Kotlin
-- No 3rd party dependencies used other than Mockito in unit tests
+- No 3rd party dependencies used other than Mockito in unit tests (based on new document)
 - App should be ready to build and run after cloning from repo
 - Built apk: https://github.com/oguzbabaoglu/flickrdemo/releases/download/1.0/app-debug.apk
 
